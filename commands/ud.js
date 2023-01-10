@@ -1,5 +1,8 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
+
+//each embed field has a character limit found here: https://www.pythondiscord.com/pages/guides/python-guides/discord-embed-limits/
+//this function trims the passed in string if it exceeds the passed in character limit
 const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
 
 module.exports = {
@@ -22,7 +25,7 @@ module.exports = {
 				}
 				const [answer] = list;
 				const embed = new EmbedBuilder()
-					.setColor(0xEFFF00)
+					.setColor('Random')
 					.setTitle(answer.word)
 					.setURL(answer.permalink)
 					.addFields(
