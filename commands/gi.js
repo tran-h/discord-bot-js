@@ -9,7 +9,11 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('gi')
         .setDescription('Provides basic information about a specified Genshin Impact character.')
-        .addStringOption(option => option.setName('input').setDescription('The character to search for').setRequired(true)),
+        .addStringOption(option =>
+            option.setName('input')
+                .setDescription('The character to search for')
+                .setRequired(true)
+        ),
     async execute(interaction) {
         await interaction.deferReply();
         const searchTerm = interaction.options.getString('input');
@@ -50,6 +54,7 @@ module.exports = {
             })
             .catch((err) => {
                 console.error(err);
+                interaction.editReply({ content: `No character named **${searchTerm}** exists.` });
             });
     },
 };

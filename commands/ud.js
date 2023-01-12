@@ -9,7 +9,11 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ud')
 		.setDescription('Provides the top definition for the provided term from UrbanDictionary.')
-		.addStringOption(option => option.setName('input').setDescription('The term to search for on UrbanDictionary').setRequired(true)),
+		.addStringOption(option =>
+			option.setName('input')
+				.setDescription('The term to search for on UrbanDictionary')
+				.setRequired(true)
+		),
 	async execute(interaction) {
 		await interaction.deferReply();
 		const term = interaction.options.getString('input');
