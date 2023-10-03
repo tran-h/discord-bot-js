@@ -1,4 +1,4 @@
-# discord-bot
+# discord-bot-js
 Simple Discord bot that can retrieve and display data from multiple different APIs
 
 # APIs Used
